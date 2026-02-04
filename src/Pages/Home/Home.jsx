@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
-import BlobSpline from "../BlobSpline/BlobSpline";
+import BlobSpline from "../../Components/BlobSpline/BlobSpline";
 
-export default function Hero({ onReady }) {
+export default function Home({ onReady }) {
   return (
     <section id="home">
     <Box

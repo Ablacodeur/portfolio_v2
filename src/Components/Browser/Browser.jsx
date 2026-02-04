@@ -1,10 +1,11 @@
 import React from "react";
-import Hero from "../Hero/Hero";
+import Hero from "../../Pages/Home/Home";
 import { Box } from "@mui/material";
 import Navbar from "../Navbar/Navbar";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {  useRef } from "react";
+import Work from "../../Pages/Home/Work/Work";
 
 
 export default function Browser({ onHeroReady }) {
@@ -20,7 +21,9 @@ export default function Browser({ onHeroReady }) {
       <Box ref={heroRef}>
         <Hero onReady={onHeroReady} />
       </Box>
-
+      <Box>
+        <Work />
+      </Box>
       {/* <Box ref={aboutRef}>
         <AboutMyCode />
       </Box>

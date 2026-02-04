@@ -1,12 +1,15 @@
 import { useState } from 'react'
-import Browser from './Components/Browser/Browser'
+import Navbar from './Components/Navbar/Navbar'
+import { Outlet } from 'react-router-dom'
+import { Box } from '@mui/material'
 
 function App() {
 
   return (
-    <>
-    <Browser />
-    </>
+  <Box>
+    <Navbar/>
+    <Outlet></Outlet>
+  </Box>
   )
 }
 

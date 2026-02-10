@@ -35,6 +35,7 @@ export default function Navbar() {
             <div className="d-flex flex-column flex-lg-row align-items-lg-center gap-2 ms-lg-3">
               <Button
                 variant="text"
+                href={'/'}
                 sx={{
                   height: "45px",
                   
@@ -57,6 +58,7 @@ export default function Navbar() {
               </Button>
               <Button
                 variant="text"
+                href={'/works'}
                 sx={{
                   height: "45px",
                   

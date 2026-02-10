@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import SideElements from "../SideElements/SideElements";
 
+
 export default function BlobSpline({ onReady }) {
   const splineRef = useRef(null);
 
@@ -40,7 +41,8 @@ export default function BlobSpline({ onReady }) {
       <spline-viewer
         ref={splineRef}
         url="https://prod.spline.design/7zrDzCifAboq0qlU/scene.splinecode"
-        style={{ width: "100%", height: "100%" }}
+
+        style={{ width: "100%", height: "100%"}}
       />
       <SideElements />
     </div>

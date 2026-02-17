@@ -4,17 +4,18 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import work1 from "../../assets/resources/work1_xs.png"
 
 export default function MediaCard({project}) {
   
   return (
-    <Card sx={{ maxWidth: 335 ,maxHeight:450}}>
+    <Card sx={{ maxWidth: 335 ,maxHeight:500}}>
       <CardMedia
-        sx={{ height: 300 }}
-        image={project.image_Path}
-        title={project.name}
+        component="img"
+        height="380"
+        image={project.image_path}      // ex: "/assets/projects/task.png"
+        alt={project.name}
       />
+
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {project.name}

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Navbar from './Components/Navbar/Navbar'
 import { Outlet } from 'react-router-dom'
 import { Box } from '@mui/material'
-import bg from './assets/resources/bg.png'
+import bg from '/assets/projects/bg.png'
 
 function App() {
 

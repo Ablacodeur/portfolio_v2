@@ -8,21 +8,46 @@ import Typography from '@mui/material/Typography';
 export default function MediaCard({project}) {
   
   return (
-    <Card sx={{ maxWidth: 335 ,maxHeight:500}}>
+      <Card
+        sx={{
+          maxWidth: 320,
+          borderRadius: "24px",
+          border: "1px solid rgba(0,0,0,0.12)",
+          boxShadow: "0 8px 25px rgba(0,0,0,0.08)",
+          transition: "all 0.3s ease",
+          "&:hover": {
+            boxShadow: "0 12px 35px rgba(0,0,0,0.15)",
+            transform: "translateY(-6px)",
+            border: "1px solid rgba(0,0,0,0.25)",
+          },
+    }}
+    >
+
       <CardMedia
         component="img"
-        height="380"
-        image={project.image_path}      // ex: "/assets/projects/task.png"
+        height="300"
+        image={project.image_path}    
         alt={project.name}
+        
       />
 
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h6" component="div">
           {project.name}
         </Typography>
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+        <Typography
+          variant="body2"
+          sx={{
+            color: "text.secondary",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            display: "-webkit-box",
+            WebkitLineClamp: 1, 
+            WebkitBoxOrient: "vertical",
+          }}
+        >
           {project.description}
-        </Typography>
+      </Typography>
       </CardContent>
       <CardActions>
         <Button size="small">See More</Button>

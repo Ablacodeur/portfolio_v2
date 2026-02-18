@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import MediaCard from "../../../Components/Card/MediaCard";
+import { Box } from "@mui/material";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import BottomBox from "../../../Components/BottomBox/BottomBox";
+import MarqueeText from "../../../Components/MarqueeText/MarqueeText";
 
 export default function Work() {
   const [projects, setProjects] = useState([]);
@@ -14,18 +20,33 @@ export default function Work() {
         console.log("Erreur fetch projects:", error);
       }
     };
-
     fetchProjects();
   }, []);
 
   return (
-    <div>
-      {projects.map((project) => (
-        <MediaCard
-          key={project.id}
-          project={project}
-        />
-      ))}
-    </div>
+    <Box sx={{ maxHeight:'100vh' }}>
+    <MarqueeText text="Deliver impactful, user-centered digital product solutions to drive the company's success" />
+      <Box sx={{ width: "100%", py: 2 }}>
+        
+
+        <Swiper
+          spaceBetween={26}
+          grabCursor={true}     // ✅ souris “grab”
+          freeMode={true}       // ✅ pousse librement (momentum)
+          slidesPerView={"auto"}// ✅ chaque card garde sa taille
+          style={{ padding: "0 16px" }}
+        >
+          {projects.map((project) => (
+            <SwiperSlide
+              key={project.id}
+              style={{ width: "auto" }} // ✅ important pour garder la taille du MediaCard
+            >
+              <MediaCard project={project} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Box>
+      <BottomBox />
+    </Box>
   );
 }

@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import BottomBox from "../../../Components/BottomBox/BottomBox";
 import MarqueeText from "../../../Components/MarqueeText/MarqueeText";
+import bg from "../../../../public/assets/projects/bg.png"
 
 export default function Work() {
   const [projects, setProjects] = useState([]);
@@ -24,7 +25,17 @@ export default function Work() {
   }, []);
 
   return (
-    <Box sx={{ maxHeight:'100vh' }}>
+
+    <Box
+      sx={{
+        maxHeight: "100vh",
+        backgroundImage: `url(${bg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+
     <MarqueeText text="Deliver impactful, user-centered digital product solutions to drive the company's success" />
       <Box sx={{ width: "100%", py: 2 }}>
         

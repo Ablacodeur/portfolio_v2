@@ -1,10 +1,11 @@
 import { Box, Button } from '@mui/material'
 import React from 'react'
 import my_logo from '/assets/projects/TheLogo.png'
+import bg from "../../../public/assets/projects/bg.png"
 
 export default function Navbar() {
   return (
-    <Box sx={{ width: "100%", top: 0,backgroundColor:'white',height:'10vh'}}>
+    <Box sx={{ width: "100%", top: 0,height:'10vh'}}>
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           {/* LOGO */}

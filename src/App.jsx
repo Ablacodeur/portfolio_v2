@@ -2,12 +2,19 @@ import { useState } from 'react'
 import Navbar from './Components/Navbar/Navbar'
 import { Outlet } from 'react-router-dom'
 import { Box } from '@mui/material'
-import bg from '/assets/projects/bg.png'
-
+import bg from "../public/assets/projects/bg.png"
 function App() {
 
   return (
-  <Box >
+      <Box
+        sx={{
+          maxHeight: "100vh",
+          backgroundImage: `url(${bg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
     <Navbar/>
     <Outlet></Outlet>
   </Box>

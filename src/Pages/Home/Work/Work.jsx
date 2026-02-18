@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import BottomBox from "../../../Components/BottomBox/BottomBox";
 import MarqueeText from "../../../Components/MarqueeText/MarqueeText";
-import bg from "../../../../public/assets/projects/bg.png"
+import bg from "../../../../public/assets/projects/bg2.png"
 
 export default function Work() {
   const [projects, setProjects] = useState([]);

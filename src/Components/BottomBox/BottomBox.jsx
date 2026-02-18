@@ -20,8 +20,8 @@ export default function BottomBox() {
 
         <Typography
         sx={{
-            fontSize: { xs: "52px", md: "72px" },
-            fontWeight: 800,
+            fontSize: { xs: "52px", md: "80px" },
+            fontWeight: 900,
             lineHeight: 1.05,
         }}
         >

@@ -27,7 +27,7 @@ export default function Home({ onReady }) {
         sx={{
           position: "relative",
           zIndex: 1,
-          minHeight: "100vh",
+          minHeight: "80vh",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -39,8 +39,8 @@ export default function Home({ onReady }) {
         <Typography
           sx={{
             fontFamily: "Corinthia",
-            fontSize: { xs: "34px", md: "56px" },
-            mb: 2,
+            fontSize: { xs: "34px", md: "65px" },
+            mb: '',
           }}
         >
           Hi! I’m Abla
@@ -48,7 +48,7 @@ export default function Home({ onReady }) {
 
         <Typography
           sx={{
-            fontSize: { xs: "40px", md: "90px" },
+            fontSize: { xs: "40px", md: "95px" },
             lineHeight: 1.1,
             fontFamily: "Cinzel",
           }}
@@ -58,14 +58,6 @@ export default function Home({ onReady }) {
           Developer
         </Typography>
 
-        <Typography
-          sx={{
-            mt: 20,
-            fontSize: { xs: "12px", md: "14px" },
-          }}
-        >
-          Scroll down
-        </Typography>
       </Box>
     </Box>
     </section>

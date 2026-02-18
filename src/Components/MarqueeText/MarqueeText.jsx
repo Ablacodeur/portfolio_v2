@@ -3,7 +3,7 @@ import { Box, Typography } from "@mui/material";
 
 export default function MarqueeText({
   text = "Deliver impactful, user-centered digital product solutions",
-  speed = 40,
+  speed = 100,
 }) {
   return (
     <Box
@@ -36,7 +36,7 @@ export default function MarqueeText({
 
               // ✅ Outline text style
               color: "transparent",
-              WebkitTextStroke: "2px rgba(122,63,43,0.65)",
+              WebkitTextStroke: "2px rgba(43, 122, 67, 0.65)",
 
               fontFamily: "Inter, sans-serif",
 

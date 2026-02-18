@@ -1,7 +1,7 @@
 import { Box, Button } from '@mui/material'
 import React from 'react'
 import my_logo from '/assets/projects/TheLogo.png'
-import bg from "../../../public/assets/projects/bg.png"
+import bg from "../../../public/assets/projects/bg2.png"
 
 export default function Navbar() {
   return (
@@ -48,6 +48,7 @@ export default function Navbar() {
               </Button>
               <Button
                 variant="text"
+                href={'/works'}
                 sx={{
                   height: "45px",
                   
@@ -55,8 +56,9 @@ export default function Navbar() {
                   width: { xs: "100%", lg: "auto" },
                 }}
               >
-               About  |
+               Works  |
               </Button>
+              
               <Button
                 variant="text"
                 href={'/works'}
@@ -67,7 +69,7 @@ export default function Navbar() {
                   width: { xs: "100%", lg: "auto" },
                 }}
               >
-               Works 
+               About Me
               </Button>
 
             </div>

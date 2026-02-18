@@ -40,8 +40,7 @@ export default function BlobSpline({ onReady }) {
     >
       <spline-viewer
         ref={splineRef}
-        url="https://prod.spline.design/7zrDzCifAboq0qlU/scene.splinecode"
-
+        url="https://prod.spline.design/pZTGKB2LXuO07uZT/scene.splinecode"
         style={{ width: "100%", height: "100%"}}
       />
       <SideElements />

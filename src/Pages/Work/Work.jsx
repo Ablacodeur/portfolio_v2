@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import MediaCard from "../../../Components/Card/MediaCard";
+import MediaCard from "../../Components/Card/MediaCard";
 import { Box } from "@mui/material";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import BottomBox from "../../../Components/BottomBox/BottomBox";
-import MarqueeText from "../../../Components/MarqueeText/MarqueeText";
-import bg from "../../../../public/assets/projects/bg2.png"
+import BottomBox from "../../Components/BottomBox/BottomBox";
+import MarqueeText from "../../Components/MarqueeText/MarqueeText";
+import bg from "../../../public/assets/projects/bg2.png"
 
 export default function Work() {
   const [projects, setProjects] = useState([]);

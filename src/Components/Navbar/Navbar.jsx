@@ -61,7 +61,7 @@ export default function Navbar() {
               
               <Button
                 variant="text"
-                href={'/works'}
+                href={'/about'}
                 sx={{
                   height: "45px",
                   

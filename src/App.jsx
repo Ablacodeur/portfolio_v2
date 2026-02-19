@@ -3,6 +3,7 @@ import Navbar from './Components/Navbar/Navbar'
 import { Outlet } from 'react-router-dom'
 import { Box } from '@mui/material'
 import bg from "../public/assets/projects/bg2.png"
+import "./App.css";
 function App() {
 
   return (

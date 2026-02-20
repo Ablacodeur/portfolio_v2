@@ -66,7 +66,7 @@ export default function About() {
           sx={{
             width: { xs: "100%", md: "360px" },
             borderRadius: "5px",
-            backgroundColor: "#819d66", 
+            background: "radial-gradient(circle at top left, #94B577 0%, #ffffff 70%)",
             fontFamily: "Inter, sans-serif",
             fontWeight:'300',
             p: 3,

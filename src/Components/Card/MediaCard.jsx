@@ -4,9 +4,13 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import {useNavigate } from 'react-router-dom';
 
 export default function MediaCard({project}) {
-  
+  const navigate = useNavigate()
+  const handleSeeMore = () => {
+    navigate(`/theproject/${project.id}`); 
+  };
   return (
       <Card
         sx={{
@@ -50,7 +54,7 @@ export default function MediaCard({project}) {
       </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">See More</Button>
+        <Button size="small" onClick={handleSeeMore}>See More</Button>
       </CardActions>
     </Card>
   );

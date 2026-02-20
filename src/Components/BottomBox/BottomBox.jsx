@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 
-export default function BottomBox() {
+export default function BottomBox({}) {
   return (
     <Box
     sx={{
@@ -9,7 +9,7 @@ export default function BottomBox() {
         px: { xs: 2, md: 6 },
         display: "flex",
         gap: 4,
-        alignItems: "baseline", // ✅ aligne sur la base du gros texte
+        alignItems: "baseline", 
     }}
     >
     {/* LEFT */}
@@ -35,7 +35,7 @@ export default function BottomBox() {
         flex: 1,
         height: "1px",
         backgroundColor: "rgba(0,0,0,0.35)",
-        transform: "translateY(90px)", // ✅ ajuste finement si besoin
+        transform: "translateY(90px)", 
         
         }}
     />

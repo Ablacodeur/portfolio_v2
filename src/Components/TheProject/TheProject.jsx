@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Box, Button, Stack, Typography } from "@mui/material";
-import BottomBox from "../BottomBox/BottomBox";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import BottomBox_project from "../BottomBox_project/BottomBox_project";
 
 export default function TheProject() {
   const { id } = useParams(); // récupère l'id dans l'URL
@@ -31,7 +31,7 @@ export default function TheProject() {
   return (
     <Box
       sx={{
-        maxHeight: "90vh",
+        height: "90vh",
         width: "100%",
         px: { xs: 2, md: 6 },
         py: { xs: 3, md: 6 },
@@ -111,8 +111,11 @@ export default function TheProject() {
       </Stack>
 
       {/* BOTTOM INFO SECTION */}
-      <Box sx={{ mt: { xs: 2, md: 3 } }}>
-        <BottomBox />
+      <Box sx={{ mt: { xs: 2, md: 6 } }}>
+        <BottomBox_project
+        text1={project.name}
+        text3={project.user_summary}
+         />
       </Box>
     </Box>
   );

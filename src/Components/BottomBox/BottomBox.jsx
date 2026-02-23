@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 
-export default function BottomBox({}) {
+export default function BottomBox() {
   return (
     <Box
     sx={{
@@ -9,7 +9,7 @@ export default function BottomBox({}) {
         px: { xs: 2, md: 6 },
         display: "flex",
         gap: 4,
-        alignItems: "baseline", 
+        alignItems: "center", 
     }}
     >
     {/* LEFT */}
@@ -20,7 +20,7 @@ export default function BottomBox({}) {
 
         <Typography
         sx={{
-            fontSize: { xs: "52px", md: "80px" },
+            fontSize: { xs: "52px", md: "60px" },
             fontWeight: 900,
             lineHeight: 1.05,
         }}
@@ -35,7 +35,7 @@ export default function BottomBox({}) {
         flex: 1,
         height: "1px",
         backgroundColor: "rgba(0,0,0,0.35)",
-        transform: "translateY(90px)", 
+        transform: "translateY(30px)", 
         
         }}
     />
@@ -43,7 +43,7 @@ export default function BottomBox({}) {
     {/* RIGHT */}
     <Box sx={{ maxWidth: 520 }}>
         <Typography sx={{ fontStyle: "italic", fontWeight: 700, mb: 1 }}>
-        “Working and learning code has...”
+        “Turning ideas into reality through code is what I love most.”
         </Typography>
 
         <Typography
@@ -51,12 +51,11 @@ export default function BottomBox({}) {
             color: "text.secondary",
             textAlign: "justify",
             textJustify: "inter-word",
-            lineHeight: 1.8,
+            lineHeight: 1.2,
         }}
         >
-        Haha, I really meant it. Every journey brings me joy and priceless
-        lessons. I’m grateful to meet all the people that I have met, and I’m so
-        excited to meet amazing people out there.
+        There’s something powerful about starting with a vision and shaping it into a real, working product. Each line of code teaches me patience, resilience, and creativity. 
+        I’m deeply grateful for this passion that allows me to constantly learn, build, and express myself through technology.
         </Typography>
     </Box>
     </Box>

@@ -1,7 +1,6 @@
 import { Box, Button } from '@mui/material'
 import React from 'react'
 import my_logo from '/assets/projects/TheLogo.png'
-import bg from "../../../public/assets/projects/bg2.png"
 
 export default function Navbar() {
   return (

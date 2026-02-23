@@ -7,7 +7,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import BottomBox from "../../Components/BottomBox/BottomBox";
 import MarqueeText from "../../Components/MarqueeText/MarqueeText";
-import bg from "../../../public/assets/projects/bg2.png"
 
 export default function Work() {
   const [projects, setProjects] = useState([]);
@@ -28,8 +27,8 @@ export default function Work() {
 
     <Box
       sx={{
-        maxHeight: "100vh",
-        backgroundImage: `url(${bg})`,
+        height: "90vh",
+        width: "100%",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -43,7 +42,7 @@ export default function Work() {
         <Swiper
           spaceBetween={26}
           grabCursor={true}     // ✅ souris “grab”
-          freeMode={true}       // ✅ pousse librement (momentum)
+          freeMode={true}       // ✅ pousse librement 
           slidesPerView={"auto"}// ✅ chaque card garde sa taille
           style={{ padding: "0 16px" }}
         >

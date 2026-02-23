@@ -1,7 +1,11 @@
 import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
-import BottomBox from "../../Components/BottomBox/BottomBox";
 import me from "../../../public/assets/projects/me.png"
+import BottomBox_about from "../../BottomBox_about/BottomBox_about";
+
+
+
+
 
 export default function About() {
     const currentYear = new Date().getFullYear();
@@ -12,18 +16,11 @@ export default function About() {
     minute: "2-digit",
     });
 
-    const socialLinks = [
-    { label: "Email", href: "mailto:ablacodeur@gmail.com" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/victoire-agboli" },
-    { label: "WhatsApp", href: "https://wa.me/5142628032" }, 
-    { label: "GitHub", href: "https://github.com/ablacodeur" },
-    { label: "My CV", href: "/CV_Victoire_Agboli_FullStack_Canada.pdf", download: true }
-];
 
   return (
     <Box
       sx={{
-        maxHeight: "90vh",
+        height: "90vh",
         width: "100%",
         px: { xs: 2, md: 6 },
         py: { xs: 3, md: 6 },
@@ -103,7 +100,8 @@ export default function About() {
 
       {/* BOTTOM INFO SECTION */}
       <Box sx={{ mt: { xs: 2, md: 3 } }}>
-        <BottomBox />
+        <BottomBox_about
+         />
       </Box>
     </Box>
   );

@@ -8,7 +8,7 @@ export default function BottomBox_project({text1, text2,text3}) {
         mt: 4,
         display: "flex",
         gap: 4,
-        alignItems: "center", 
+        alignItems: "flex-start", 
     }}
     >
     {/* LEFT */}

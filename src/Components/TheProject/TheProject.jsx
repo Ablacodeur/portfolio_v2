@@ -96,6 +96,17 @@ export default function TheProject() {
           <Typography sx={{ color: "rgba(0,0,0,0.75)", lineHeight: 1.8, mb: 8,fontFamily: "Open Sans",fontSize: "14px",textAlign:'justify' }}>
             {project.description}
           </Typography>
+          <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", mb: 6 }}>
+            {project.tech_logos?.map((logo, index) => (
+              <Box
+                key={index}
+                component="img"
+                src={logo}
+                alt="tech"
+                sx={{ width: 30, height: 30, objectFit: "contain" }}
+              />
+            ))}
+          </Box>
             <Box>
             <a
                 href={project.live_url}

@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 
 export default function MarqueeText({
-  text = "Deliver impactful, user-centered digital product solutions",
+  text="Crafting Code • Building Experiences • Transforming Ideas Into Reality •" ,
   speed = 100,
 }) {
   return (

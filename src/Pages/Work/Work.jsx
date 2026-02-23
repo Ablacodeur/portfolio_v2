@@ -35,7 +35,7 @@ export default function Work() {
       }}
     >
 
-    <MarqueeText text="Deliver impactful, user-centered digital product solutions to drive the company's success" />
+    <MarqueeText text="Crafting Code • Building Experiences • Transforming Ideas Into Reality •" />
       <Box sx={{ width: "100%", py: 2 }}>
         
 

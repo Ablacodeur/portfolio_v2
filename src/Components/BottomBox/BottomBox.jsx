@@ -9,7 +9,9 @@ export default function BottomBox() {
         px: { xs: 2, md: 6 },
         display: "flex",
         gap: 4,
-        alignItems: "center", 
+        alignItems: {xs:'normal',md:'center'}, 
+        flexDirection:{xs:'column',md:'row'},
+        marginBottom:{xs:'40px',md:'none'},
     }}
     >
     {/* LEFT */}
@@ -20,7 +22,7 @@ export default function BottomBox() {
 
         <Typography
         sx={{
-            fontSize: { xs: "52px", md: "60px" },
+            fontSize: { xs: "80px", md: "60px" },
             fontWeight: 900,
             lineHeight: 1.05,
         }}
@@ -36,12 +38,13 @@ export default function BottomBox() {
         height: "1px",
         backgroundColor: "rgba(0,0,0,0.35)",
         transform: "translateY(30px)", 
+        display:{xs:'none',md:'flex'}
         
         }}
     />
 
     {/* RIGHT */}
-    <Box sx={{ maxWidth: 520 }}>
+    <Box sx={{ maxWidth: 520,textAlign:{xs:'end',md:'justify'} }}>
         <Typography sx={{ fontStyle: "italic", fontWeight: 700, mb: 1 }}>
         “Turning ideas into reality through code is what I love most.”
         </Typography>
@@ -49,7 +52,6 @@ export default function BottomBox() {
         <Typography
         sx={{
             color: "text.secondary",
-            textAlign: "justify",
             textJustify: "inter-word",
             lineHeight: 1.2,
         }}

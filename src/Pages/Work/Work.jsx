@@ -34,9 +34,10 @@ export default function Work() {
         backgroundRepeat: "no-repeat",
       }}
     >
-
-    <MarqueeText text="Crafting Code • Building Experiences • Transforming Ideas Into Reality •" />
-      <Box sx={{ width: "100%", py: 2 }}>
+    <Box sx={{ display: {xs:'none', md:'flex'}}}>
+      <MarqueeText  text="Crafting Code • Building Experiences • Transforming Ideas Into Reality •" />
+    </Box>
+      <Box sx={{ width: "100%", py: 2,display:'flex',flexDirection:{xs:'column-reverse',md:'column',overflow:'hidden'} }}>
         
 
         <Swiper
@@ -55,8 +56,9 @@ export default function Work() {
             </SwiperSlide>
           ))}
         </Swiper>
+         <BottomBox />
       </Box>
-      <BottomBox />
+     
     </Box>
   );
 }

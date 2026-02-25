@@ -29,9 +29,9 @@ export default function MediaCard({project}) {
 
       <CardMedia
         component="img"
-        height="300"
         image={project.image_path}    
         alt={project.name}
+        sx={{ height:{xs:'220px',md:'300px'} }}
         
       />
 

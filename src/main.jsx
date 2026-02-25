@@ -6,6 +6,7 @@ import Home from './Pages/Home/Home.jsx';
 import Work from './Pages/Work/Work.jsx';
 import About from './Pages/About/About.jsx';
 import TheProject from './Components/TheProject/TheProject.jsx';
+import { ThemeProvider } from '@mui/material';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

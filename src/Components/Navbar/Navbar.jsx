@@ -42,15 +42,15 @@ export default function Navbar() {
           spacing={2}
           sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}
         >
-          <Button component={Link} to="/" variant="text">
+          <Button component={Link} to="/" variant="text" sx={{ textDecoration:'none',color:'black'}}>
             Home
           </Button>
 
-          <Button component={Link} to="/works" variant="text">
+          <Button component={Link} to="/works" variant="text" sx={{ textDecoration:'none',color:'black'}}>
             Works
           </Button>
 
-          <Button component={Link} to="/about" variant="text">
+          <Button component={Link} to="/about" variant="text" sx={{ textDecoration:'none',color:'black'}}>
             About Me
           </Button>
         </Stack>
@@ -109,7 +109,7 @@ export default function Navbar() {
               component={Link}
               to="/"
               onClick={handleClose}
-              sx={{ fontSize: {xs:'35px',md:'26px'} ,textDecoration:'none',color:'#e49c96',fontFamily: "Corinthia",}}
+              sx={{ fontSize: {xs:'35px',md:'26px'} ,textDecoration:'none',color:'#e49c96',fontFamily: "Corinthia"}}
             >
               Home
             </Button>
@@ -118,7 +118,7 @@ export default function Navbar() {
               component={Link}
               to="/works"
               onClick={handleClose}
-              sx={{ fontSize: {xs:'35px',md:'26px'} ,textDecoration:'none',color:'#e49c96',fontFamily: "Corinthia",}}
+              sx={{ fontSize: {xs:'35px',md:'26px'} ,textDecoration:'none',color:'#e49c96',fontFamily: "Corinthia"}}
             >
               Works
             </Button>
@@ -127,7 +127,7 @@ export default function Navbar() {
               component={Link}
               to="/about"
               onClick={handleClose}
-              sx={{ fontSize: {xs:'35px',md:'26px'},textDecoration:'none',color:'#e49c96',fontFamily: "Corinthia", }}
+              sx={{ fontSize: {xs:'35px',md:'26px'},textDecoration:'none',color:'#e49c96',fontFamily: "Corinthia"}}
             >
               About Me
             </Button>

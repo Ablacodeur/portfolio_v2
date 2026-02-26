@@ -43,7 +43,7 @@ export default function BottomBox_about({text1, text2,text3}) {
         flex: 1,
         height: "1px",
         backgroundColor: "rgba(0,0,0,0.35)",
-        transform: "translateY(70px)", 
+        transform: "translateY(20px)", 
         display:{xs:'none',md:'flex'}
 
         }}

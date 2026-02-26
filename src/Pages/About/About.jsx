@@ -25,7 +25,7 @@ export default function About() {
         px: { xs: 2, md: 6 },
         py: { xs: 3, md: 6 },
         display:'flex',
-        flexDirection:{xs:'column-reverse'}
+        flexDirection:{xs:'column-reverse',md:'column'}
       }}
     >
       {/* TOP SECTION */}
@@ -36,7 +36,7 @@ export default function About() {
           flexDirection: { xs: "column", md: "row" },
           alignItems: "stretch",// pour que les 2 blocs prennent la mm hauteuur
           marginTop:'20px',
-          height:'76%'
+          height:{xs:'76%',md:'90%'}
         }}
       >
         {/* LEFT: IMAGE FRAME */}
@@ -73,25 +73,25 @@ export default function About() {
             p: 3,
           }}
         >
-          <Typography sx={{ fontWeight: 800, fontSize: "26px", mb: 0.5 ,fontFamily: "Inter-regular"}}>
+          <Typography sx={{ fontWeight: 800, fontSize: "26px", mb: {xs:'5px',md:'10px'} ,fontFamily: "Inter-regular"}}>
             Abla Victoire Agboli
           </Typography>
 
-          <Typography sx={{ fontSize: "13px", opacity: 0.85, mb: 1,fontFamily: "Open Sans" }}>
+          <Typography sx={{ fontSize: "13px", opacity: 0.85, mb: {xs:'5px',md:'30px'},fontFamily: "Open Sans" }}>
             Full-Stack Developer • Montreal • Canada
           </Typography>
 
-          <Typography sx={{ fontWeight: 700, mb: 1,fontFamily: "Great-vibes" }}>
+          <Typography sx={{ fontWeight: 700, mb: {xs:'5px',md:'30px'},fontFamily: "Great-vibes" }}>
             JavaScript • React • API Integration • Node/Express • PostgreSQL
           </Typography>
 
-          <Typography sx={{ color: "rgba(0,0,0,0.75)", lineHeight: 1.8, mb: 1.5,fontFamily: "Open Sans",fontSize: "14px",textAlign:'justify' }}>
+          <Typography sx={{ color: "rgba(0,0,0,0.75)", lineHeight: 1.8, mb: {xs:'5px',md:'30px'},fontFamily: "Open Sans",fontSize: "14px",textAlign:'justify' }}>
             I build clean, user-centered web apps with modern UI and solid
             backend APIs. I enjoy turning ideas into reliable products with
             thoughtful UX.
           </Typography>
 
-          <Typography sx={{ color: "rgba(0,0,0,0.75)",mb: 1, lineHeight: 1.8,fontFamily: "Open Sans",fontSize: "14px"}}>
+          <Typography sx={{ color: "rgba(0,0,0,0.75)",mb: {xs:'5px',md:'30px'}, lineHeight: 1.8,fontFamily: "Open Sans",fontSize: "14px"}}>
             Open to collaboration and opportunities. Let’s connect anytime!
           </Typography>
 

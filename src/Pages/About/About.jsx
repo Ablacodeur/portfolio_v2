@@ -24,6 +24,8 @@ export default function About() {
         width: "100%",
         px: { xs: 2, md: 6 },
         py: { xs: 3, md: 6 },
+        display:'flex',
+        flexDirection:{xs:'column-reverse'}
       }}
     >
       {/* TOP SECTION */}
@@ -33,6 +35,8 @@ export default function About() {
           gap: { xs: 3, md: 6 },
           flexDirection: { xs: "column", md: "row" },
           alignItems: "stretch",// pour que les 2 blocs prennent la mm hauteuur
+          marginTop:'20px',
+          height:'76%'
         }}
       >
         {/* LEFT: IMAGE FRAME */}
@@ -42,7 +46,7 @@ export default function About() {
             borderRadius: "5px",
             overflow: "hidden",
             backgroundColor: "#eee",
-            height: { xs: "320px", md: "520px" },
+            height: { xs: "220px", md: "520px" },
           }}
         >
           <Box
@@ -69,25 +73,25 @@ export default function About() {
             p: 3,
           }}
         >
-          <Typography sx={{ fontWeight: 800, fontSize: "26px", mb: 1.5 ,fontFamily: "Inter-regular"}}>
+          <Typography sx={{ fontWeight: 800, fontSize: "26px", mb: 0.5 ,fontFamily: "Inter-regular"}}>
             Abla Victoire Agboli
           </Typography>
 
-          <Typography sx={{ fontSize: "13px", opacity: 0.85, mb: 2,fontFamily: "Open Sans" }}>
+          <Typography sx={{ fontSize: "13px", opacity: 0.85, mb: 1,fontFamily: "Open Sans" }}>
             Full-Stack Developer • Montreal • Canada
           </Typography>
 
-          <Typography sx={{ fontWeight: 700, mb: 3,fontFamily: "Great-vibes" }}>
+          <Typography sx={{ fontWeight: 700, mb: 1,fontFamily: "Great-vibes" }}>
             JavaScript • React • API Integration • Node/Express • PostgreSQL
           </Typography>
 
-          <Typography sx={{ color: "rgba(0,0,0,0.75)", lineHeight: 1.8, mb: 4,fontFamily: "Open Sans",fontSize: "14px",textAlign:'justify' }}>
+          <Typography sx={{ color: "rgba(0,0,0,0.75)", lineHeight: 1.8, mb: 1.5,fontFamily: "Open Sans",fontSize: "14px",textAlign:'justify' }}>
             I build clean, user-centered web apps with modern UI and solid
             backend APIs. I enjoy turning ideas into reliable products with
             thoughtful UX.
           </Typography>
 
-          <Typography sx={{ color: "rgba(0,0,0,0.75)",mb: 3, lineHeight: 1.8,fontFamily: "Open Sans",fontSize: "14px"}}>
+          <Typography sx={{ color: "rgba(0,0,0,0.75)",mb: 1, lineHeight: 1.8,fontFamily: "Open Sans",fontSize: "14px"}}>
             Open to collaboration and opportunities. Let’s connect anytime!
           </Typography>
 
@@ -99,7 +103,7 @@ export default function About() {
       </Stack>
 
       {/* BOTTOM INFO SECTION */}
-      <Box sx={{ mt: { xs: 2, md: 3 } }}>
+      <Box sx={{ mt: { xs: 0, md: 3 } }}>
         <BottomBox_about
          />
       </Box>

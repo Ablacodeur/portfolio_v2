@@ -11,10 +11,13 @@ export default function BottomBox_about({text1, text2,text3}) {
     <Box
     sx={{
         width: "100%",
-        mt: 4,
+        mt: {xs:'0',md:'2'},
         display: "flex",
-        gap: 4,
-        alignItems: "flex-start", 
+        gap: 2,
+        alignItems: {xs:'normal',md:'center'}, 
+        flexDirection:{xs:'column',md:'row'},
+        marginBottom:{xs:'0px',md:'none'},
+
     }}
     >
     {/* LEFT */}
@@ -25,7 +28,7 @@ export default function BottomBox_about({text1, text2,text3}) {
 
         <Typography
         sx={{
-            fontSize: { xs: "52px", md: "50px" },
+            fontSize: { xs: "42px", md: "50px" },
             fontWeight: 900,
             lineHeight: 1.05,
         }}
@@ -41,19 +44,21 @@ export default function BottomBox_about({text1, text2,text3}) {
         height: "1px",
         backgroundColor: "rgba(0,0,0,0.35)",
         transform: "translateY(70px)", 
-        
+        display:{xs:'none',md:'flex'}
+
         }}
     />
 
 
     {/* RIGHT */}
-    <Box sx={{ minWidth: 360}}>
-        <Typography sx={{ fontStyle: "italic", fontWeight: 700, mb: 1 }}>
+    <Box sx={{ minWidth: 360 ,textAlign:{xs:'end',md:'justify'},
+    display:'flex',alignItems:'flex-end',flexDirection:'column',mb:'0.5' }}>
+        <Typography sx={{ fontStyle: "italic", fontWeight: 700 }}>
         Let’s Craft Something Exceptional.
         
         </Typography>
 
-    <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap", mb: 6 }}>
+    <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap", mb: 3 ,alignContent:'flex-end' }}>
 
     {/* EMAIL */}
     <Box
@@ -66,7 +71,7 @@ export default function BottomBox_about({text1, text2,text3}) {
         
         src={mail_logo}
         alt="Email"
-        sx={{ width: 50, height: 50, objectFit: "contain", cursor: "pointer" ,transition: "transform 0.3s ease",
+        sx={{ width: {xs:'35px',md:'50px'}, height: {xs:'35px',md:'50px'}, objectFit: "contain", cursor: "pointer" ,transition: "transform 0.3s ease",
         "&:hover": {
         transform: "scale(1.15)",
         }}}
@@ -84,7 +89,7 @@ export default function BottomBox_about({text1, text2,text3}) {
         component="img"
         src={github_logo}
         alt="GitHub"
-        sx={{ width: 50, height: 50, objectFit: "contain", cursor: "pointer" ,transition: "transform 0.3s ease",
+        sx={{ width: {xs:'35px',md:'50px'}, height: {xs:'35px',md:'50px'}, objectFit: "contain", cursor: "pointer" ,transition: "transform 0.3s ease",
         "&:hover": {
         transform: "scale(1.15)",
         }}}
@@ -103,7 +108,7 @@ export default function BottomBox_about({text1, text2,text3}) {
         component="img"
         src={linkdin_logo}
         alt="LinkedIn"
-        sx={{ width: 50, height: 50, objectFit: "contain", cursor: "pointer" ,transition: "transform 0.3s ease",
+        sx={{ width: {xs:'35px',md:'50px'}, height: {xs:'35px',md:'50px'}, objectFit: "contain", cursor: "pointer" ,transition: "transform 0.3s ease",
         "&:hover": {
         transform: "scale(1.15)",
         }}}
@@ -122,7 +127,7 @@ export default function BottomBox_about({text1, text2,text3}) {
         component="img"
         src={whatsapp_logo}
         alt="WhatsApp"
-        sx={{ width: 50, height: 50, objectFit: "contain", cursor: "pointer" ,transition: "transform 0.3s ease",
+        sx={{ width: {xs:'35px',md:'50px'}, height: {xs:'35px',md:'50px'}, objectFit: "contain", cursor: "pointer" ,transition: "transform 0.3s ease",
         "&:hover": {
         transform: "scale(1.15)",
         }}}
@@ -140,7 +145,7 @@ export default function BottomBox_about({text1, text2,text3}) {
         component="img"
         src={cv_logo}
         alt="Download CV"
-        sx={{ width: 50, height: 50, objectFit: "contain", cursor: "pointer" ,transition: "transform 0.3s ease",
+        sx={{ width: {xs:'35px',md:'50px'}, height: {xs:'35px',md:'50px'}, objectFit: "contain", cursor: "pointer" ,transition: "transform 0.3s ease",
         "&:hover": {
         transform: "scale(1.15)",
         }}}

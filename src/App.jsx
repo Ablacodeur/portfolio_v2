@@ -7,7 +7,7 @@ function App() {
   const isMobile = useMediaQuery("(max-width:600px)");
 
   const bgUrl = isMobile
-    ? "/assets/projects/bg-mobile.png"
+    ? "/assets/projects/bg-small-2.png"
     : "/assets/projects/bg2.png";
 
   return (

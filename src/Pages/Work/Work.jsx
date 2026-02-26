@@ -8,13 +8,16 @@ import "swiper/css";
 import BottomBox from "../../Components/BottomBox/BottomBox";
 import MarqueeText from "../../Components/MarqueeText/MarqueeText";
 
+const API = import.meta.env.VITE_API_URL;
+
+
 export default function Work() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/api/projects");
+        const res = await axios.get(`${API}/api/projects`);
         setProjects(res.data);
       } catch (error) {
         console.log("Erreur fetch projects:", error);

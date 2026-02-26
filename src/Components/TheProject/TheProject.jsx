@@ -7,12 +7,13 @@ import BottomBox_project from "../BottomBox_project/BottomBox_project";
 export default function TheProject() {
   const { id } = useParams(); // récupère l'id dans l'URL
   const [project, setProject] = useState(null);
+  const API = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const fetchProject = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8080/api/projects/${id}`
+          `${API}/api/projects/${id}`
         );
         setProject(res.data);
       } catch (error) {

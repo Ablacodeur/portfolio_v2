@@ -1,83 +1,139 @@
-import { Box, Button } from '@mui/material'
-import React from 'react'
-import my_logo from '/assets/projects/TheLogo.png'
+import React from "react";
+import { Box, Button, Modal, IconButton, Stack } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
+import MenuIcon from "@mui/icons-material/Menu";
+import { Link } from "react-router-dom";
+import my_logo from "/assets/projects/TheLogo.png";
 
 export default function Navbar() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
-    <Box sx={{ width: "100%", top: 0,height:'10vh'}}>
-      <nav className="navbar navbar-expand-lg">
-        <div className="container-fluid">
-          {/* LOGO */}
-          <a className="navbar-brand fw-bold" href="/">
-            <img src={my_logo} style={{ width: "90px", height: "auto" }} />
-          </a>
+    <Box sx={{ width: "100%", height: "10vh", display: "flex", alignItems: "center" }}>
+      <Box
+        sx={{
+          width: "100%",
+          px: { xs: 2, md: 6 },
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        {/* LOGO */}
+        <Box
+          component={Link}
+          to="/"
+          sx={{ display: "flex", alignItems: "center" }}
+        >
+          <Box
+            component="img"
+            src={my_logo}
+            alt="logo"
+            sx={{ width: "90px", height: "auto" }}
+          />
+        </Box>
 
-          {/* Bouton hamburger visible sur petits écrans */}
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarMenu"
-            aria-controls="navbarMenu"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+        {/* DESKTOP MENU */}
+        <Stack
+          direction="row"
+          spacing={2}
+          sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}
+        >
+          <Button component={Link} to="/" variant="text">
+            Home
+          </Button>
+
+          <Button component={Link} to="/works" variant="text">
+            Works
+          </Button>
+
+          <Button component={Link} to="/about" variant="text">
+            About Me
+          </Button>
+        </Stack>
+
+        {/* MOBILE HAMBURGER */}
+        <IconButton
+          onClick={handleOpen}
+          sx={{ display: { xs: "flex", md: "none" } }}
+        >
+          <MenuIcon />
+        </IconButton>
+      </Box>
+
+      {/* MOBILE MODAL FULLSCREEN */}
+      <Modal open={open} onClose={handleClose}>
+        <Box
+          sx={{
+            position: "fixed",
+            inset: 0,
+            width: "100vw",
+            height: "100vh",
+            bgcolor: "",
+            backdropFilter: "blur(14px)",
+            display: "flex",
+            flexDirection: "column",
+            px: 3,
+            pt: 2,
+          }}
+        >
+          {/* TOP BAR */}
+          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+            <Box component={Link} to="/" onClick={handleClose}>
+              <Box
+                component="img"
+                src={my_logo}
+                sx={{ width: "90px" }}
+              />
+            </Box>
+
+            <IconButton onClick={handleClose}>
+              <CloseIcon />
+            </IconButton>
+          </Box>
+
+          {/* LINKS CENTER */}
+          <Stack
+            sx={{
+              flex: 1,
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 3,
+
+            }}
           >
-            <span className="navbar-toggler-icon"></span>
-          </button>
+            <Button
+              component={Link}
+              to="/"
+              onClick={handleClose}
+              sx={{ fontSize: {xs:'35px',md:'26px'} ,textDecoration:'none',color:'#e49c96',fontFamily: "Corinthia",}}
+            >
+              Home
+            </Button>
 
-          {/* Contenu du menu */}
-          <div
-            className="collapse navbar-collapse justify-content-end"
-            id="navbarMenu"
-          >
+            <Button
+              component={Link}
+              to="/works"
+              onClick={handleClose}
+              sx={{ fontSize: {xs:'35px',md:'26px'} ,textDecoration:'none',color:'#e49c96',fontFamily: "Corinthia",}}
+            >
+              Works
+            </Button>
 
-            {/* Boutons */}
-            <div className="d-flex flex-column flex-lg-row align-items-lg-center gap-2 ms-lg-3">
-              <Button
-                variant="text"
-                href={'/'}
-                sx={{
-                  height: "45px",
-                  
-                  color: "black",
-                  width: { xs: "100%", lg: "auto" },
-                }}
-              >
-               Home  |
-              </Button>
-              <Button
-                variant="text"
-                href={'/works'}
-                sx={{
-                  height: "45px",
-                  
-                  color: "black",
-                  width: { xs: "100%", lg: "auto" },
-                }}
-              >
-               Works  |
-              </Button>
-              
-              <Button
-                variant="text"
-                href={'/about'}
-                sx={{
-                  height: "45px",
-                  
-                  color: "black",
-                  width: { xs: "100%", lg: "auto" },
-                }}
-              >
-               About Me
-              </Button>
-
-            </div>
-          </div>
-        </div>
-      </nav>
+            <Button
+              component={Link}
+              to="/about"
+              onClick={handleClose}
+              sx={{ fontSize: {xs:'35px',md:'26px'},textDecoration:'none',color:'#e49c96',fontFamily: "Corinthia", }}
+            >
+              About Me
+            </Button>
+          </Stack>
+        </Box>
+      </Modal>
     </Box>
-
-
-  )
+  );
 }
-

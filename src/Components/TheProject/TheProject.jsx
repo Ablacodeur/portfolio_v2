@@ -35,6 +35,8 @@ export default function TheProject() {
         width: "100%",
         px: { xs: 2, md: 6 },
         py: { xs: 3, md: 6 },
+        display:'flex',
+        flexDirection:{xs:'column-reverse',md:'column',overflow:'hidden'} 
       }}
     >
       {/* TOP SECTION */}
@@ -43,7 +45,8 @@ export default function TheProject() {
           width: "100%",
           gap: { xs: 3, md: 6 },
           flexDirection: { xs: "column", md: "row" },
-          alignItems: "stretch",// pour que les 2 blocs prennent la mm hauteuur
+          alignItems: "stretch",
+          height:{xs:'70%',md:'80%'}
         }}
       >
         {/* LEFT: IMAGE FRAME */}
@@ -84,19 +87,19 @@ export default function TheProject() {
             border:'1px solid green'
           }}
         >
-          <Typography sx={{ fontWeight: 800, fontSize: "23px", mb: 4.5 ,fontFamily: "Inter-regular"}}>
+          <Typography sx={{ fontWeight: 800, fontSize: "23px",  mb: {xs:'5px',md:'10px'} ,fontFamily: "Inter-regular"}}>
             {project.name}
           </Typography>
 
 
-          <Typography sx={{ fontWeight: 700, mb: 4,fontFamily: "Great-vibes" }}>
+          <Typography sx={{ fontWeight: 700,  mb: {xs:'7px',md:'10px'},fontFamily: "Great-vibes" }}>
             {project.frameworks}
           </Typography>
 
-          <Typography sx={{ color: "rgba(0,0,0,0.75)", lineHeight: 1.8, mb: 8,fontFamily: "Open Sans",fontSize: "14px",textAlign:'justify' }}>
+          <Typography sx={{ color: "rgba(0,0,0,0.75)", lineHeight: 1.8,  mb: {xs:'10px',md:'20px'},fontFamily: "Open Sans",fontSize: "14px",textAlign:'justify' }}>
             {project.description}
           </Typography>
-          <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", mb: 6 }}>
+          <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap",  mb: {xs:'7px',md:'10px'} }}>
             {project.tech_logos?.map((logo, index) => (
               <Box
                 key={index}

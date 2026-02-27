@@ -6,24 +6,34 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const { Pool } = pkg;
-const allowedOrigins = [
-  'https://portfolio-v2-azure-nine.vercel.app',
-  'http://localhost:5173'
-];
 
 const app = express();
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  methods: 'GET,POST,DELETE',
-};
-app.use(cors(corsOptions));
+const allowedOrigins = new Set([
+  "https://portfolio-v2-azure-nine.vercel.app",
+  "http://localhost:5173",
+]);
 
+const vercelPreviewRegex = /^https:\/\/portfolio-v2-azure-nine.*\.vercel\.app$/;
+
+app.use((req, res, next) => {
+  if (req.headers.origin) console.log("Origin:", req.headers.origin);
+  next();
+});
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.has(origin) || vercelPreviewRegex.test(origin)) {
+        return callback(null, true);
+      }
+      return callback(null, false);
+    },
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 app.use(express.json());
 
 

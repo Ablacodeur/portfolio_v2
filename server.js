@@ -8,8 +8,34 @@ dotenv.config();
 const { Pool } = pkg;
 
 const app = express();
-app.use(cors());
+const allowedOrigins = [
+  "https://portfolio-v2-azure-nine.vercel.app",
+  "http://localhost:5173",
+];
+
+
+const vercelRegex = /^https:\/\/portfolio-v2-azure-nine.*\.vercel\.app$/;
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (!origin) return callback(null, true); // Postman, server-to-server
+
+    if (allowedOrigins.includes(origin) || vercelRegex.test(origin)) {
+      return callback(null, true);
+    }
+
+    return callback(null, false); // ne throw pas Error
+  },
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
+
+app.options("/api", cors(corsOptions));
+app.use(express.json());
+
 
 /* ===========================
    ✅ PostgreSQL Connection

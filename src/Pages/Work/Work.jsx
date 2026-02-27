@@ -9,7 +9,7 @@ import BottomBox from "../../Components/BottomBox/BottomBox";
 import MarqueeText from "../../Components/MarqueeText/MarqueeText";
 
 const API = import.meta.env.VITE_API_URL;
-
+console.log("API:", import.meta.env.VITE_API_URL);
 
 export default function Work() {
   const [projects, setProjects] = useState([]);

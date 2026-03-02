@@ -28,7 +28,7 @@ export default function BottomBox_about({text1, text2,text3}) {
 
         <Typography
         sx={{
-            fontSize: { xs: "42px", md: "50px" },
+            fontSize: { xs: "32px", md: "50px" },
             fontWeight: 900,
             lineHeight: 1.05,
         }}

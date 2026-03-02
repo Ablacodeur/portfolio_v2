@@ -32,10 +32,10 @@ export default function TheProject() {
   return (
     <Box
       sx={{
-        height: "90vh",
+        height: {xs:'normal',md:'90vh'},
         width: "100%",
         px: { xs: 2, md: 6 },
-        py: { xs: 3, md: 6 },
+        py: { xs: 0.5, md: 6 },
         display:'flex',
         flexDirection:{xs:'column-reverse',md:'column',overflow:'hidden'} 
       }}
@@ -81,7 +81,7 @@ export default function TheProject() {
             backgroundColor: "rgba(249, 250, 249, 0.1) !important",
             backdropFilter: "blur(22px) saturate(180%)",
             WebkitBackdropFilter: "blur(22px) saturate(180%)",
-            boxShadow: "0 10px 35px rgba(0,0,0,0.18)",
+            // boxShadow: "0 10px 35px rgba(0,0,0,0.18)",
             fontFamily: "Inter, sans-serif",
             fontWeight:'300',
             p: 3,

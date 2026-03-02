@@ -20,7 +20,7 @@ export default function About() {
   return (
     <Box
       sx={{
-        height: "90vh",
+        height: {xs:'normal',md:'90vh'},
         width: "100%",
         px: { xs: 2, md: 6 },
         py: { xs: 3, md: 6 },
@@ -42,11 +42,11 @@ export default function About() {
         {/* LEFT: IMAGE FRAME */}
         <Box
           sx={{
-            flex: 1,
+            flex: {xs:'0',md:'1'},
             borderRadius: "5px",
             overflow: "hidden",
             backgroundColor: "#eee",
-            height: { xs: "220px", md: "520px" },
+            height: { xs: "30vh", md: "520px" },
           }}
         >
           <Box
@@ -55,7 +55,7 @@ export default function About() {
             alt="Abla"
             sx={{
               width: "100%",
-              height: "100%",
+              height: {xs:'300px',md:'100%'},
               objectFit: "cover", //pas écrasée
               display: "block",
             }}

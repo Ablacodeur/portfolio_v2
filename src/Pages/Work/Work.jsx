@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Box } from "@mui/material";
-
 import MediaCard from "../../Components/Card/MediaCard";
-import BottomBox from "../../Components/BottomBox/BottomBox";
-import MarqueeText from "../../Components/MarqueeText/MarqueeText";
+import { Box } from "@mui/material";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import BottomBox from "../../Components/BottomBox/BottomBox";
+import MarqueeText from "../../Components/MarqueeText/MarqueeText";
 
 const API = import.meta.env.VITE_API_URL;
-console.log("API:", API);
+console.log("API:", import.meta.env.VITE_API_URL);
 
 export default function Work() {
   const [projects, setProjects] = useState([]);
@@ -28,54 +27,41 @@ export default function Work() {
   }, []);
 
   return (
-    // ✅ Section à hauteur fixe (design full screen) 
+
     <Box
       sx={{
-        height: { xs: "100dvh", md: "90vh" }, //iPhone safe
+        maxheight: {xs:'normal',md:'90vh'},
         width: "100%",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        overflow: "hidden", 
-        display: "flex",
-        flexDirection: "column",
       }}
     >
-      {/* Marquee desktop only */}
-      <Box sx={{ display: { xs: "none", md: "flex" } }}>
-        <MarqueeText text="Crafting Code • Building Experiences • Transforming Ideas Into Reality •" />
-      </Box>
+    <Box sx={{ display: {xs:'none', md:'flex'}}}>
+      <MarqueeText  text="Crafting Code • Building Experiences • Transforming Ideas Into Reality •" />
+    </Box>
+      <Box sx={{py: 2,display:'flex',flexDirection:{xs:'column-reverse',md:'column'},overflow:'hidden' }}>
+        
 
-      {/* ✅ Zone qui scroll à l'intérieur  */}
-      <Box
-        sx={{
-          flex: 1,
-          width: "100%",
-          py: 2,
-          display: "flex",
-          flexDirection: { xs: "column-reverse", md: "column" },
-          overflowY: "auto", 
-          overflowX: "hidden",
-          pb: { xs: 10, md: 2 },
-          WebkitOverflowScrolling: "touch", 
-        }}
-      >
         <Swiper
           spaceBetween={26}
-          grabCursor={true}
-          freeMode={true}
-          slidesPerView={"auto"}
-          style={{ padding: "0 16px 24px" }} 
+          grabCursor={true}     // ✅ souris “grab”
+          freeMode={true}       // ✅ pousse librement 
+          slidesPerView={"auto"}// ✅ chaque card garde sa taille
+          style={{ padding: "0 16px" }}
         >
           {projects.map((project) => (
-            <SwiperSlide key={project.id} style={{ width: "auto" }}>
+            <SwiperSlide
+              key={project.id}
+              style={{ width: "auto" }} // ✅ important pour garder la taille du MediaCard
+            >
               <MediaCard project={project} />
             </SwiperSlide>
           ))}
         </Swiper>
-
-        <BottomBox />
+         <BottomBox />
       </Box>
+     
     </Box>
   );
 }

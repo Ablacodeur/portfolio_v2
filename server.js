@@ -14,9 +14,10 @@ const app = express();
 
 const allowedOrigins = new Set([
   "https://portfolio-v2-azure-nine.vercel.app",
+  "https://ablacodeur.ca",
+  "https://www.ablacodeur.ca",
   "http://localhost:5173",
 ]);
-
 const vercelPreviewRegex = /^https:\/\/portfolio-v2-azure-nine.*\.vercel\.app$/;
 
 const corsOptions = {

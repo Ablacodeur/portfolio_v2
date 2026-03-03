@@ -17,7 +17,6 @@ export default function MediaCard({project}) {
           maxWidth: 320,
           borderRadius: "24px",
           border: "1px solid rgba(0,0,0,0.12)",
-          boxShadow: "0 8px 25px rgba(0,0,0,0.08)",
           transition: "all 0.3s ease",
           "&:hover": {
             boxShadow: "0 12px 35px rgba(0,0,0,0.15)",

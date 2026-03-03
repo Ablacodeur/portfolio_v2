@@ -5,11 +5,11 @@ import { Box } from "@mui/material";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+
 import BottomBox from "../../Components/BottomBox/BottomBox";
 import MarqueeText from "../../Components/MarqueeText/MarqueeText";
 
 const API = import.meta.env.VITE_API_URL;
-console.log("API:", import.meta.env.VITE_API_URL);
 
 export default function Work() {
   const [projects, setProjects] = useState([]);
@@ -27,41 +27,70 @@ export default function Work() {
   }, []);
 
   return (
+    <Box sx={{ width: "100%",minHeight:{xs:"auto", md:'90vh'} }}>
+      <Box sx={{ display: { xs: "none", md: "flex" } }}>
+        <MarqueeText text="Crafting Code • Building Experiences • Transforming Ideas Into Reality •" />
+      </Box>
 
-    <Box
-      sx={{
-        maxheight: {xs:'normal',md:'90vh'},
-        width: "100%",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-    <Box sx={{ display: {xs:'none', md:'flex'}}}>
-      <MarqueeText  text="Crafting Code • Building Experiences • Transforming Ideas Into Reality •" />
-    </Box>
-      <Box sx={{py: 2,display:'flex',flexDirection:{xs:'column-reverse',md:'column'},overflow:'hidden' }}>
-        
-
-        <Swiper
-          spaceBetween={26}
-          grabCursor={true}     // ✅ souris “grab”
-          freeMode={true}       // ✅ pousse librement 
-          slidesPerView={"auto"}// ✅ chaque card garde sa taille
-          style={{ padding: "0 16px" }}
+      <Box
+        sx={{
+          
+          py: 2,
+          display: "flex",
+          flexDirection: { xs: "column-reverse", md: "column" },
+          pb: { xs: 2, md: 2 },
+        }}
+      >
+        {/* MOBILE: scroll natif  */}
+        <Box
+          sx={{
+            display: { xs: "flex", md: "none"},
+            overflowX: "auto",
+            overflowY: "hidden",
+            gap: 2,
+            px: 2,
+            pb: 2,
+            scrollSnapType: "x mandatory",
+            WebkitOverflowScrolling: "touch",
+            "&::-webkit-scrollbar": { display: "none" },
+          }}
         >
           {projects.map((project) => (
-            <SwiperSlide
+            <Box
               key={project.id}
-              style={{ width: "auto" }} // ✅ important pour garder la taille du MediaCard
+              sx={{
+                flex: "0 0 auto",
+                scrollSnapAlign: "start",
+                padding:'15px'
+              }}
             >
               <MediaCard project={project} />
-            </SwiperSlide>
+            </Box>
           ))}
-        </Swiper>
-         <BottomBox />
+
+          {/* petit “spacer” pour être sûr de voir la dernière carte */}
+          <Box sx={{ flex: "0 0 16px" }} />
+        </Box>
+
+        {/*DESKTOP: Swiper */}
+        <Box sx={{ display: { xs: "none", md: "block" } }}>
+          <Swiper
+            spaceBetween={26}
+            grabCursor
+            slidesPerView="auto"
+            slidesOffsetBefore={16}
+            slidesOffsetAfter={32} // IMPORTANT: permet d’aller jusqu’à la fin
+          >
+            {projects.map((project) => (
+              <SwiperSlide key={project.id} style={{ width: "auto" }}>
+                <MediaCard project={project} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </Box>
+
+        <BottomBox />
       </Box>
-     
     </Box>
   );
 }

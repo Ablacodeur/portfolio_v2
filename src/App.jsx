@@ -4,7 +4,7 @@ import { Box, useMediaQuery } from "@mui/material";
 import "./App.css";
 
 function App() {
-  const isMobile = useMediaQuery("(max-width:600px)");
+  const isMobile = useMediaQuery("(max-width:1000px)");
 
   const bgUrl = isMobile
     ? "/assets/projects/bg-small-2.png"
@@ -13,16 +13,31 @@ function App() {
   return (
     <Box
       sx={{
-        minHeight: "100vh",
+        minHeight: "100dvh",
         width: "100%",
         backgroundImage: `url(${bgUrl})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
+
+        display: "flex",
+        flexDirection: "column",
       }}
     >
       <Navbar />
-      <Outlet />
+
+      {/* ✅ seul endroit qui scroll */}
+      <Box
+        sx={{
+          flex: 1,
+          minHeight: 0, // ✅ CRUCIAL pour que le scroll marche en flex
+          overflowY: "auto",
+          overflowX: "hidden",
+          WebkitOverflowScrolling: "touch",
+        }}
+      >
+        <Outlet />
+      </Box>
     </Box>
   );
 }

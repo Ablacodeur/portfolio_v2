@@ -1,6 +1,7 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 
 export default function BottomBox() {
+     const isMobile = useMediaQuery("(max-width:550px)");
   return (
     <Box
     sx={{
@@ -10,7 +11,7 @@ export default function BottomBox() {
         display: "flex",
         gap: 4,
         alignItems: {xs:'normal',md:'center'}, 
-        flexDirection:{xs:'column',md:'row'},
+        flexDirection:isMobile? 'column':'row',
         marginBottom:{xs:'40px',md:'none'},
     }}
     >
@@ -38,13 +39,13 @@ export default function BottomBox() {
         height: "1px",
         backgroundColor: "rgba(0,0,0,0.35)",
         transform: "translateY(30px)", 
-        display:{xs:'none',md:'flex'}
+        display:isMobile ?'none':'flex'
         
         }}
     />
 
     {/* RIGHT */}
-    <Box sx={{ maxWidth: 520,textAlign:{xs:'end',md:'justify'} }}>
+    <Box sx={{ maxWidth: 520,textAlign:isMobile? 'end':'justify'}}>
         <Typography sx={{ fontStyle: "italic", fontWeight: 700, mb: 1 }}>
         “Turning ideas into reality through code is what I love most.”
         </Typography>

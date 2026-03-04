@@ -3,7 +3,7 @@ import { Box, Button, Modal, IconButton, Stack } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
-import my_logo from "/assets/projects/TheLogo.png";
+import my_logo from "/assets/logo.png";
 
 export default function Navbar() {
   const [open, setOpen] = React.useState(false);

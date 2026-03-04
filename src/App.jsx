@@ -4,10 +4,14 @@ import { Box, useMediaQuery } from "@mui/material";
 import "./App.css";
 
 function App() {
-  const isMobile = useMediaQuery("(max-width:1000px)");
+  // ✅ Breakpoints simples (mobile / tablette / desktop)
+  const isMobile = useMediaQuery("(max-width:600px)");
+  const isTablet = useMediaQuery("(min-width:601px) and (max-width:1200px)");
 
   const bgUrl = isMobile
     ? "/assets/projects/bg-small-2.png"
+    : isTablet
+    ? "/assets/projects/bg-tablet.png" 
     : "/assets/projects/bg2.png";
 
   return (
@@ -19,7 +23,6 @@ function App() {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-
         display: "flex",
         flexDirection: "column",
       }}

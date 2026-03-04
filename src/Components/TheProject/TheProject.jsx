@@ -95,7 +95,7 @@ export default function TheProject() {
             sx={{
               fontWeight: 800,
               fontSize: "23px",
-              mb: { xs: "5px", md: "10px" },
+              mb: { xs: "8px",sm:'20px', md: "30px" },
               fontFamily: "Inter-regular",
             }}
           >
@@ -105,7 +105,7 @@ export default function TheProject() {
           <Typography
             sx={{
               fontWeight: 700,
-              mb: { xs: "7px", md: "10px" },
+              mb: { xs: "10px",sm:'20px', md: "30px" },
               fontFamily: "Great-vibes",
             }}
           >
@@ -116,7 +116,7 @@ export default function TheProject() {
             sx={{
               color: "rgba(0,0,0,0.75)",
               lineHeight: 1.8,
-              mb: { xs: "10px", md: "20px" },
+              mb: { xs: "15px",sm:'20px', md: "40px" },
               fontFamily: "Open Sans",
               fontSize: "14px",
               textAlign: "justify",
@@ -125,7 +125,7 @@ export default function TheProject() {
             {project.description}
           </Typography>
 
-          <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", mb: { xs: "7px", md: "10px" } }}>
+          <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", mb: { xs: "10px",sm:'20px', md: "60px" } }}>
             {project.tech_logos?.map((logo, index) => (
               <Box
                 key={index}

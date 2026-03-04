@@ -15,8 +15,8 @@ export default function About() {
     hour: "2-digit",
     minute: "2-digit",
     });
-  const isMobile = useMediaQuery("(max-width:1024px)");
-  const isMedium = useMediaQuery("(min-width:750px) and (max-width:900px)");
+  const isMobile = useMediaQuery("(max-width:830px)");
+  const isMedium = useMediaQuery("(min-width:750px) and (max-width:1240px)");
 
 
   return (
@@ -35,9 +35,10 @@ export default function About() {
         sx={{
           width: "100%",
           gap: { xs: 3, md: 6 },
-         flexDirection: isMobile?"column": "row",
+          flexDirection: { xs: "column", md: "row" },
           alignItems: "stretch",// pour que les 2 blocs prennent la mm hauteuur
           marginTop:'20px',
+          height:{xs:'76%',md:'90%'}
         }}
       >
         {/* LEFT: IMAGE FRAME */}
@@ -47,7 +48,7 @@ export default function About() {
             borderRadius: "5px",
             overflow: "hidden",
             backgroundColor: "#eee",
-            height: isMobile ? 'auto': { xs: "30vh", md: "520px" },
+            height: isMedium ? 'auto': { xs: "30vh", md: "520px" },
           }}
         >
           <Box
@@ -56,7 +57,7 @@ export default function About() {
             alt="Abla"
             sx={{
               width: "100%",
-              height:isMedium ? '550px': {xs:'300px',md:'100%'},
+              height:isMedium ? '100%': {xs:'300px',md:'100%'},
               objectFit: "cover", //pas écrasée
               display: "block",
             }}
@@ -74,25 +75,25 @@ export default function About() {
             p: 3,
           }}
         >
-          <Typography sx={{ fontWeight: 800, fontSize: "26px", mb:isMedium? '10px': {xs:'5px',md:'10px'} ,fontFamily: "Inter-regular"}}>
+          <Typography sx={{ fontWeight: 800, fontSize: "26px", mb: {xs:'5px',md:'10px'} ,fontFamily: "Inter-regular"}}>
             Abla Victoire Agboli
           </Typography>
 
-          <Typography sx={{ fontSize: "13px", opacity: 0.85, mb:isMedium? '10px': {xs:'5px',md:'30px'},fontFamily: "Open Sans" }}>
+          <Typography sx={{ fontSize: "13px", opacity: 0.85, mb: {xs:'5px',md:'30px'},fontFamily: "Open Sans" }}>
             Full-Stack Developer • Montreal • Canada
           </Typography>
 
-          <Typography sx={{ fontWeight: 700, mb:isMedium? '10px': {xs:'5px',md:'30px'},fontFamily: "Great-vibes" }}>
+          <Typography sx={{ fontWeight: 700, mb: {xs:'5px',md:'30px'},fontFamily: "Great-vibes" }}>
             JavaScript • React • API Integration • Node/Express • PostgreSQL
           </Typography>
 
-          <Typography sx={{ color: "rgba(0,0,0,0.75)", lineHeight: 1.8, mb:isMedium? '10px': {xs:'5px',md:'30px'},fontFamily: "Open Sans",fontSize: "14px",textAlign:'justify' }}>
+          <Typography sx={{ color: "rgba(0,0,0,0.75)", lineHeight: 1.8, mb: {xs:'5px',md:'30px'},fontFamily: "Open Sans",fontSize: "14px",textAlign:'justify' }}>
             I build clean, user-centered web apps with modern UI and solid
             backend APIs. I enjoy turning ideas into reliable products with
             thoughtful UX.
           </Typography>
 
-          <Typography sx={{ color: "rgba(0,0,0,0.75)",mb:isMedium? '10px': {xs:'5px',md:'30px'}, lineHeight: 1.8,fontFamily: "Open Sans",fontSize: "14px"}}>
+          <Typography sx={{ color: "rgba(0,0,0,0.75)",mb: {xs:'5px',md:'30px'}, lineHeight: 1.8,fontFamily: "Open Sans",fontSize: "14px"}}>
             Open to collaboration and opportunities. Let’s connect anytime!
           </Typography>
 

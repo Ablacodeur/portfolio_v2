@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import cv_logo from '../../public/assets/projects/cv_logo.png'
 import github_logo from '../../public/assets/projects/github_logo.png'
 import mail_logo from '../../public/assets/projects/mail_logo.png'
@@ -7,15 +7,17 @@ import whatsapp_logo from '../../public/assets/projects/whatsapp_logo.png'
 
 
 export default function BottomBox_about({text1, text2,text3}) {
+const isMobile = useMediaQuery("(max-width:830px)");
+
   return (
     <Box
     sx={{
         width: "100%",
-        mt: {xs:'0',md:'2'},
+        mt: {xs:'1',md:'2'},
         display: "flex",
         gap: 2,
         alignItems: {xs:'normal',md:'center'}, 
-        flexDirection:{xs:'column',md:'row'},
+        flexDirection:isMobile?'column':'row',
         marginBottom:{xs:'0px',md:'none'},
 
     }}

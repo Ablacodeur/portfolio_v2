@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography, useMediaQuery } from "@mui/material";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import BottomBox_project from "../BottomBox_project/BottomBox_project";
@@ -8,6 +8,7 @@ export default function TheProject() {
   const { id } = useParams(); // récupère l'id dans l'URL
   const [project, setProject] = useState(null);
   const API = import.meta.env.VITE_API_URL;
+  const isMobile = useMediaQuery("(max-width:1030px)");
 
   useEffect(() => {
     const fetchProject = async () => {
@@ -37,7 +38,8 @@ export default function TheProject() {
         px: { xs: 2, md: 6 },
         py: { xs: 0.5, md: 6 },
         display:'flex',
-        flexDirection:{xs:'column-reverse',md:'column',overflow:'hidden'} 
+        flexDirection:isMobile?'column-reverse':'column', 
+        overflow:'hidden'
       }}
     >
       {/* TOP SECTION */}
@@ -45,7 +47,7 @@ export default function TheProject() {
         sx={{
           width: "100%",
           gap: { xs: 3, md: 6 },
-          flexDirection: { xs: "column", md: "row" },
+          flexDirection: isMobile?"column": "row",
           alignItems: "stretch",
           height:{xs:'70%',md:'80%'}
         }}
@@ -53,11 +55,11 @@ export default function TheProject() {
         {/* LEFT: IMAGE FRAME */}
         <Box
           sx={{
-            flex: 1,
+            flex: {xs:'0',md:'1'},
             borderRadius: "5px",
             overflow: "hidden",
             backgroundColor: "#eee",
-            height: { xs: "320px", md: "520px" },
+            height: isMobile ? 'auto': { xs: "30vh", md: "520px" },
           }}
         >
           <Box
@@ -76,7 +78,7 @@ export default function TheProject() {
         {/* RIGHT: TEXT CARD */}
         <Box
           sx={{
-            width: { xs: "100%", md: "360px" },
+            width: isMobile?"100%": "360px" ,
             borderRadius: "5px",
             backgroundColor: "rgba(249, 250, 249, 0.1) !important",
             backdropFilter: "blur(22px) saturate(180%)",
@@ -127,7 +129,7 @@ export default function TheProject() {
 
       {/* BOTTOM INFO SECTION */}
       <Box sx={{ mt: { xs: 2, md: 6 } }}>
-        <BottomBox_project
+        <BottomBox_project 
         text1={project.name}
         text3={project.user_summary}
          />

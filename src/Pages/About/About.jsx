@@ -27,7 +27,7 @@ export default function About() {
         px: { xs: 2, md: 6 },
         py: { xs: 3, md: 6 },
         display:'flex',
-        flexDirection:{xs:'column-reverse',md:'column'}
+        flexDirection:isMobile?'column-reverse':'column'
       }}
     >
       {/* TOP SECTION */}
@@ -35,7 +35,7 @@ export default function About() {
         sx={{
           width: "100%",
           gap: { xs: 3, md: 6 },
-          flexDirection: { xs: "column", md: "row" },
+         flexDirection: isMobile?"column": "row",
           alignItems: "stretch",// pour que les 2 blocs prennent la mm hauteuur
           marginTop:'20px',
         }}
@@ -47,7 +47,7 @@ export default function About() {
             borderRadius: "5px",
             overflow: "hidden",
             backgroundColor: "#eee",
-            height: isMedium ? '50vh': { xs: "30vh", md: "520px" },
+            height: isMobile ? 'auto': { xs: "30vh", md: "520px" },
           }}
         >
           <Box

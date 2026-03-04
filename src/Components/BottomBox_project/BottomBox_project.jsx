@@ -1,6 +1,7 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 
 export default function BottomBox_project({text1, text2,text3}) {
+    const isMobile = useMediaQuery("(max-width:1030px)");
   return (
     <Box
     sx={{
@@ -9,16 +10,16 @@ export default function BottomBox_project({text1, text2,text3}) {
         display: "flex",
         gap: {xs:2,md:'4'},
         alignItems: {xs:'normal',md:'center'}, 
-        flexDirection:{xs:'column',md:'row'},
+        flexDirection:isMobile? 'column':'row',
         marginBottom:{xs:'5px',md:'none'},
 
     }}
     >
     {/* LEFT */}
-    <Box sx={{ maxWidth: "260px"}}>
+    <Box sx={{ minWidth: "260px"}}>
         <Typography
         sx={{
-            fontSize: { xs: "35px", md: "30px" },
+            fontSize: isMobile? "35px": "30px",
             fontWeight: 900,
             lineHeight: 1.8,
         }}
@@ -34,20 +35,20 @@ export default function BottomBox_project({text1, text2,text3}) {
         height: "1px",
         backgroundColor: "rgba(0,0,0,0.35)",
         transform: "translateY(20px)", 
-        display:{xs:'none',md:'flex'}
+        display:isMobile ?'none':'flex'
         }}
     />
 
 
     {/* RIGHT */}
-        <Box sx={{ maxWidth: "520px"}}>
+        <Box sx={{ maxWidth: isMobile?'100%':'520px'}}>
         <Typography
         sx={{
             color: "text.secondary",
-            textAlign: "justify",
+            textAlign:isMobile? 'end':'justify',
             textJustify: "inter-word",
             lineHeight: 1.8,
-            textAlign:{xs:'end',md:'justify' }
+            textAlign:{xs:'end',md:'justify' },
         }}
         >
             {text3}        

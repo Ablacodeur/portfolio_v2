@@ -12,7 +12,8 @@ export default function Navbar() {
   const handleClose = () => setOpen(false);
 
   return (
-    <Box sx={{ width: "100%", height:'10vh', display: "flex", alignItems: "center" }}>
+    <Box sx={{ width: "100%", height:'10vh', display: "flex", alignItems: "center",  backgroundColor:'#F8F8FF',
+ }}>
       <Box
         sx={{
           width: "100%",

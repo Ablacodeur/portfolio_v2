@@ -16,13 +16,13 @@ export default function MediaCard({project}) {
         sx={{
           maxWidth: 320,
           borderRadius: "24px",
-          border: "1px solid rgba(0,0,0,0.12)",
+          border: "2px solid rgba(43, 122, 67, 0.65)",
           transition: "all 0.3s ease",
           "&:hover": {
-            boxShadow: "0 12px 35px rgba(0,0,0,0.15)",
             transform: "translateY(-6px)",
             border: "1px solid rgba(0,0,0,0.25)",
           },
+          marginBottom:'3px'
     }}
     >
 
@@ -53,7 +53,9 @@ export default function MediaCard({project}) {
       </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" onClick={handleSeeMore}>See More</Button>
+        <Button size="small" onClick={handleSeeMore}>
+        <Typography sx={{fontSize: {xs:'15px',md:'26px'} ,textDecoration:'none',color:'#e49c96',fontFamily: "Corinthia",textTransform:'capitalize' }}>See More</Typography>
+        </Button>
       </CardActions>
     </Card>
   );

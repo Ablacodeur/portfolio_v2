@@ -20,6 +20,7 @@ export default function Home({ onReady }) {
           position: "relative",
           height: "90vh",
           overflow: "hidden",
+
         }}
       >
         {/* BLOB EN FOND */}

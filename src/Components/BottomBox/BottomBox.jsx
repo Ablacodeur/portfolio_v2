@@ -58,7 +58,6 @@ export default function BottomBox() {
         }}
         >
         There’s something powerful about starting with a vision and shaping it into a real, working product. Each line of code teaches me patience, resilience, and creativity. 
-        I’m deeply grateful for this passion that allows me to constantly learn, build, and express myself through technology.
         </Typography>
     </Box>
     </Box>

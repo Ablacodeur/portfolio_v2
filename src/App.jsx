@@ -21,7 +21,7 @@ function App() {
       sx={{
         minHeight: "100dvh",
         width: "100%",
-        backgroundImage: `url(${bgUrl})`,
+        // backgroundImage: `url(${bgUrl})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

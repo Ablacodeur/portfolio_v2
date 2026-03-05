@@ -3,27 +3,35 @@ import { Box, Stack, Typography, useMediaQuery } from "@mui/material";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import BottomBox_project from "../BottomBox_project/BottomBox_project";
+import { useLoading } from "../../Context/LoadingContext";
+
 
 export default function TheProject() {
   const { id } = useParams();
   const [project, setProject] = useState(null);
+  const { startLoading, stopLoading } = useLoading();
 
   const API = import.meta.env.VITE_API_URL;
 
   // <= 1030 : tablette + mobile
   const isMobile = useMediaQuery("(max-width:1030px)");
 
-  useEffect(() => {
-    const fetchProject = async () => {
-      try {
-        const res = await axios.get(`${API}/api/projects/${id}`);
-        setProject(res.data);
-      } catch (error) {
-        console.log("Erreur fetch project:", error);
-      }
-    };
-    fetchProject();
-  }, [id]);
+useEffect(() => {
+  const fetchProject = async () => {
+    startLoading();
+    try {
+      const res = await axios.get(`${API}/api/projects/${id}`);
+      setProject(res.data);
+    } catch (error) {
+      console.log("Erreur fetch project:", error);
+    } finally {
+      stopLoading();
+    }
+  };
+
+  fetchProject();
+}, [id]);
+
 
   if (!project) return <div>Loading...</div>;
 

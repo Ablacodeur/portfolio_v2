@@ -12,28 +12,36 @@ export default function MediaCard({project}) {
     navigate(`/theproject/${project.id}`); 
   };
   return (
-      <Card
-        sx={{
-          maxWidth: 320,
-          borderRadius: "24px",
-          border: "2px solid rgba(43, 122, 67, 0.65)",
-          transition: "all 0.3s ease",
-          "&:hover": {
-            transform: "translateY(-6px)",
-            border: "1px solid rgba(0,0,0,0.25)",
-          },
-          marginBottom:'3px'
-    }}
-    >
+<Card
+  sx={{
+    maxWidth: 320,
+    borderRadius: "24px",
+    border: "2px solid rgba(43, 122, 67, 0.65)",
+    transition: "transform 0.3s ease, border 0.3s ease",
+    overflow: "hidden",
 
-      <CardMedia
-        component="img"
-        image={project.image_path}    
-        alt={project.name}
-        sx={{ height:{xs:'220px',md:'300px'} }}
-        
-      />
+    transform: "scale(0.95)",   
 
+    "&:hover": {
+      transform: "scale(1)",    
+      border: "1px solid rgba(178, 112, 79, 0.65)",
+    },
+
+    marginBottom: { xs: "auto", md: "3px" }
+  }}
+><CardMedia
+  component="img"
+  image={project.image_path}
+  alt={project.name}
+  sx={{
+    height: { xs: "220px", md: "300px" },
+    transition: "transform 0.4s ease",
+
+    ".MuiCard-root:hover &": {
+      transform: "scale(1.1)",
+    }
+  }}
+/>
       <CardContent>
         <Typography gutterBottom variant="h6" component="div">
           {project.name}
@@ -54,7 +62,7 @@ export default function MediaCard({project}) {
       </CardContent>
       <CardActions>
         <Button size="small" onClick={handleSeeMore}>
-        <Typography sx={{fontSize: {xs:'15px',md:'26px'} ,textDecoration:'none',color:'#e49c96',fontFamily: "Corinthia",textTransform:'capitalize' }}>See More</Typography>
+        <Typography sx={{fontSize: {xs:'23px',md:'26px'} ,textDecoration:'none',color:'#e49c96',fontFamily: "Corinthia",textTransform:'capitalize' }}>See More</Typography>
         </Button>
       </CardActions>
     </Card>

@@ -70,7 +70,7 @@ useEffect(() => {
               display: "flex",
               overflowX: "auto",
               overflowY: "hidden",
-              gap: 2,
+              gap: 0.3,
               px: 2,
               pb: 2,
               scrollSnapType: "x mandatory",

@@ -9,45 +9,38 @@ const { Pool } = pkg;
 const app = express();
 
 /* ===========================
-   ✅ CORS (Vercel + preview + local)
+   CORS
 =========================== */
 
-const allowedOrigins = new Set([
+const allowedOrigins = [
   "https://portfolio-v2-azure-nine.vercel.app",
   "https://ablacodeur.ca",
   "https://www.ablacodeur.ca",
   "http://localhost:5173",
-]);
-const vercelPreviewRegex = /^https:\/\/portfolio-v2-azure-nine.*\.vercel\.app$/;
+];
 
-const corsOptions = {
-  origin: (origin, cb) => {
-    // Postman / server-to-server
-    if (!origin) return cb(null, true);
+app.use(
+  cors({
+    origin: allowedOrigins,
+    credentials: true,
+  })
+);
 
-    const ok = allowedOrigins.has(origin) || vercelPreviewRegex.test(origin);
-    console.log("CORS origin =", origin, "=>", ok ? "ALLOWED" : "BLOCKED");
-
-    return cb(null, ok);
-  },
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-};
-
-app.use(cors(corsOptions));
+app.options("*", cors());
 app.use(express.json());
 
 /* ===========================
-   ✅ PostgreSQL (Railway safe)
+   PostgreSQL
 =========================== */
+
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  // ssl: { rejectUnauthorized: false },
 });
 
 /* ===========================
-   ✅ Debug route to confirm deploy
+   Debug route
 =========================== */
+
 app.get("/__health", (req, res) => {
   res.json({
     ok: true,
@@ -57,9 +50,12 @@ app.get("/__health", (req, res) => {
 });
 
 /* ===========================
-   ✅ Routes
+   Routes
 =========================== */
-app.get("/", (req, res) => res.send("Backend is running 🚀"));
+
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
 
 app.get("/api/projects", async (req, res) => {
   try {
@@ -76,6 +72,7 @@ app.get("/api/projects/:id", async (req, res) => {
     const result = await pool.query("SELECT * FROM projects WHERE id = $1", [
       req.params.id,
     ]);
+
     res.json(result.rows[0]);
   } catch (error) {
     console.error("Erreur API Project by id:", error);
@@ -83,5 +80,12 @@ app.get("/api/projects/:id", async (req, res) => {
   }
 });
 
+/* ===========================
+   Server
+=========================== */
+
 const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => console.log(`Server running on port ${PORT} 🚀`));
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT} 🚀`);
+});
